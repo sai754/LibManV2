@@ -17,6 +17,7 @@
     />
   </head>
   <body>
+    <!--Login Page-->
     <header>
       <a href="../index.html" class="brand">Library</a>
       <div class="navigation">
@@ -63,8 +64,8 @@
       </form>
     </div>
     <script type="module">
+      //Script for Login
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
-      import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js';
       import {
         getAuth,
         createUserWithEmailAndPassword,
@@ -81,10 +82,10 @@
       };
 
       const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
       const auth = getAuth();
       console.log(app);
 
+      //Function for Signing in into the system
       document.getElementById('login').addEventListener('click', function () {
         var email = document.getElementById('login_email').value;
         var password = document.getElementById('login_password').value;
@@ -94,7 +95,7 @@
             const user = userCredential.user;
             console.log(user);
             alert(user.email + ' Login successfully!!!');
-            window.location.href = 'categories.html';
+            window.location.href = 'categories.html'; //After logging up you will be redirected to categories page
           })
           .catch((error) => {
             const errorCode = error.code;

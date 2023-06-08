@@ -17,6 +17,7 @@
     />
   </head>
   <body>
+    <!--Sign up Page-->
     <header>
       <a href="../index.html" class="brand">Library</a>
       <div class="navigation">
@@ -69,8 +70,8 @@
       </form>
     </div>
     <script type="module">
+      //script for Sign Up
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
-      import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js';
       import {
         getAuth,
         createUserWithEmailAndPassword,
@@ -95,6 +96,8 @@
         .addEventListener('click', function () {
           var email = document.getElementById('email').value;
           var password = document.getElementById('password').value;
+
+          //For the validation of the email, we are using regex
           let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
           if (regex.test(email)) {
             createUserWithEmailAndPassword(auth, email, password)
@@ -102,7 +105,7 @@
                 const user = userCredential.user;
                 console.log(user);
                 alert('Registration successfully!!');
-                window.location.href = 'categories.html';
+                window.location.href = 'categories.html'; //After signing up you will redirected to categories page
               })
               .catch((error) => {
                 const errorMessage = error.message;

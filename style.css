@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: 'Hind Siliguri', sans-serif;
 }
-
+/* index html */
 header {
   z-index: 999;
   position: absolute;
@@ -169,6 +169,8 @@ header .navigation .navi-items a::before section {
   }
 }
 
+/* Categories.html */
+
 .filter {
   padding-top: 45px;
 }
@@ -222,6 +224,7 @@ button {
   background-color: #ccc;
 }
 
+/* For the footer in index .html */
 footer {
   background-color: #213555;
 }
@@ -292,6 +295,8 @@ footer {
   color: #fff;
   font-family: 'Hind Siliguri', sans-serif;
 }
+
+/* For the featured.html */
 
 #fb {
   background-image: url('assets/bgblob4.svg');

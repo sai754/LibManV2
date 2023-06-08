@@ -1,5 +1,6 @@
 const books = [
   {
+    //Book Datas
     title: 'Book 1',
     author: 'Author 1',
     subject: 'Subject 1',
@@ -89,6 +90,7 @@ const booksPerPage = 10;
 let currentPage = 1;
 
 function showBook(books) {
+  //This function is used for rendering the books by creating row elements
   const tableBody = document.getElementById('book-table-body');
   tableBody.innerHTML = '';
 
@@ -109,12 +111,14 @@ function showBook(books) {
     tableBody.appendChild(row);
   });
 
-  showPagination();
-  renderCriteriaCounts(books);
+  showPagination(); //Pagination function call
+  renderCriteriaCounts(books); //Counting function call
 }
 
 function renderCriteriaCounts(books) {
+  //This function is used for counting the number of books....
   const criteriaCounts = {
+    // ....based on the given criteria
     title: {},
     author: {},
     subject: {},
@@ -157,6 +161,7 @@ function renderCount(selector, criteria) {
 }
 
 function showPagination() {
+  //Function for Pagination
   const totalBooks = books.length;
   const totalPages = Math.ceil(totalBooks / booksPerPage);
 
@@ -181,6 +186,7 @@ function showPagination() {
 }
 
 function filter() {
+  //Function for filtering the book list based on the criteria
   const titleFilter = document
     .getElementById('title-filter')
     .value.toLowerCase();

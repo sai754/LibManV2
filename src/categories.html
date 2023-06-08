@@ -17,11 +17,13 @@
     />
   </head>
   <body id="filterb">
+    <!--Filter Page for filtering the Book list-->
     <header>
       <a href="../index.html" class="brand">Library</a>
       <div class="navigation">
         <div class="navi-items">
           <a href="#" id="logout" style="display: block">Log Out</a>
+          <!--It also has the Logout functionality-->
         </div>
       </div>
     </header>
@@ -94,7 +96,6 @@
     </section>
     <script type="module">
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
-      import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js';
       import {
         getAuth,
         createUserWithEmailAndPassword,
@@ -112,17 +113,16 @@
       };
 
       const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
       const auth = getAuth();
       console.log(app);
-
+      //function for logging out of the system
       document.getElementById('logout').addEventListener('click', function () {
         signOut(auth)
           .then(() => {
             console.log('Sign-out successful.');
             alert('Sign-out successful.');
             document.getElementById('logout').style.display = 'none';
-            window.location.href = '../index.html';
+            window.location.href = '../index.html'; //after logging out, you will be redirected to home page
           })
           .catch((error) => {
             console.log('An error happened.');
