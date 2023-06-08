@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+header {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  transition: 0.5s ease;
+}
+
+header .brand {
+  color: black;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header .navigation {
+  position: relative;
+}
+
+header .navigation .navi-items a {
+  position: relative;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s ease;
+}
+
+header .navigation .navi-items a::before section {
+  padding: 100px 200px;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.brand {
+  color: #fff;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home .content {
+  z-index: 888;
+  color: #fff;
+  width: 70%;
+  margin-left: 50px;
+}
+
+.home .content h1 {
+  font-size: 4em;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 75px;
+  margin-bottom: 40px;
+}
+
+.home .content h1 span {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.home .content p {
+  margin-bottom: 65px;
+}
+
+.home .content a {
+  background: #fff;
+  padding: 15px 35px;
+  color: #4942e4;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.home .meda-icons {
+  z-index: 888;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+}
+
+.home .meda-icons a {
+  color: #fff;
+  font-size: 1.6em;
+  transition: 0.3s ease;
+}
+
+.home .meda-icons a:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.home .meda-icons a:hover {
+  transform: scale(1.3);
+}
+
+.home video {
+  z-index: 000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.featured {
+  margin-left: 50px;
+}
+
+.fs {
+  background: #ffd95a;
+  padding-top: 20px;
+  padding-right: 50px;
+  background-image: url('./assets/bgblob2.svg');
+}
+
+.card {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.card1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1040px) {
+  header {
+    padding: 12px 20px;
+  }
+  section {
+    padding: 100px 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .footernav ul {
+    flex-direction: column;
+  }
+  .footernav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+  }
+}
+
+.filter {
+  padding-top: 45px;
+}
+
+#filterb {
+  color: #fff;
+  font-family: 'Hind Siliguri', sans-serif;
+  background-image: url('./assets/backsvg1.svg');
+}
+
+#filters {
+  margin-bottom: 20px;
+}
+
+#book-list {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 20px solid black;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 16px;
+}
+
+#pagination {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.pagination-link {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.pagination-link.active {
+  background-color: #ccc;
+}
+
+footer {
+  background-color: #213555;
+}
+
+.fcontainer {
+  width: 100%;
+  padding: 50px 30px 20px;
+}
+.mediaicon {
+  display: flex;
+  justify-content: center;
+}
+
+.mediaicon a {
+  text-decoration: none;
+  padding: 10px;
+  margin: 15px;
+  background-color: #fff;
+}
+
+.mediaicon a i {
+  font-size: 2em;
+  color: black;
+  opacity: 0.9;
+}
+
+.mediaicon a:hover {
+  background-color: #111;
+  transition: 0.5s;
+}
+
+.mediaicon a:hover i {
+  color: #fff;
+  transition: 0.5s;
+}
+
+.footernav {
+  margin: 30px 0;
+}
+
+.footernav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.footernav ul li a {
+  color: white;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-family: 'Hind Siliguri', sans-serif;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.footernav ul li a:hover {
+  opacity: 1;
+}
+
+.lastFooter {
+  background-color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.lastFooter p {
+  color: #fff;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+#fb {
+  background-image: url('assets/bgblob4.svg');
+}
+
+#featuredBook {
+  padding: 65px 20px;
+}
+
+#featuredBook h1 {
+  display: inline-block;
+  position: relative;
+}
+
+#featuredBook h1:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #111;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+#featuredBook h1:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#featuredBook h2 {
+  padding-left: 10px;
+}
+
+#featuredBook img {
+  padding-right: 75px;
+}
+
+#featuredBook p {
+  width: 65%;
+  font-weight: 100;
+  font-size: large;
+}
+
+#featureBookDetails {
+  padding-top: 20px;
+}
+
+#summary {
+  margin-left: 10%;
+}
+#bookcover {
+  float: right;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+#bookcover:hover {
+  transform: scale(1.1);
+}

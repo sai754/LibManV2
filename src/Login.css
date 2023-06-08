@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+body {
+  background: url('../assets/backsvg1.svg');
+}
+
+h1 {
+  margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+p {
+  padding-top: 10px;
+  width: 100%;
+  text-align: center;
+  line-height: 0.5em;
+}
+
+input {
+  margin-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+
+input:last-of-type {
+  margin-bottom: 0;
+}
+
+input,
+button {
+  padding: 1em;
+  width: 100%;
+  border: black;
+}
+
+.login {
+  background-color: white;
+  padding: 7%;
+  width: 40vw;
+  margin-left: 30vw;
+  height: 70vh;
+  margin-top: 15vh;
+}
+
+button:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#submit {
+  border: black;
+  margin-top: 5%;
+}
+
+#backLogin {
+  text-decoration: underline;
+  border: none;
+  margin-top: 3%;
+}
+
+header {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  transition: 0.5s ease;
+}
+
+header .brand {
+  color: black;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header .navigation {
+  position: relative;
+}
+
+header .navigation .navi-items a {
+  position: relative;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s ease;
+}
+
+header .navigation .navi-items a::before section {
+  padding: 100px 200px;
+  font-family: 'Hind Siliguri', sans-serif;
+}
