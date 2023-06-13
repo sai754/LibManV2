@@ -74,7 +74,38 @@
           <button class="btn btn-primary mt-2" onclick="filter()">
             Apply Filters
           </button>
+          <br />
+          <div class="row" style="margin-top: 10px">
+            <div class="col-md-3 mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="reqTitle"
+                placeholder="Title"
+              />
+            </div>
+            <div class="col-md-3 mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="reqAuthor"
+                placeholder="Author"
+              />
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="Request()">
+            Request Book
+          </button>
         </div>
+        <div
+          id="req"
+          style="
+            background: white;
+            color: black;
+            border-radius: 20px;
+            padding: 10px;
+          "
+        ></div>
 
         <div id="book-list">
           <h2>Book List</h2>
@@ -88,8 +119,9 @@
                 <th>ISBN</th>
               </tr>
             </thead>
-            <tbody id="book-table-body"></tbody>
+            <tbody style="border-radius: 10px" id="book-table-body"></tbody>
           </table>
+          <div id="load"></div>
           <div id="pagination"></div>
         </div>
       </div>

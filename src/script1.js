@@ -84,20 +84,101 @@ const books = [
     publishDate: '2021-03-01',
     ISBN: '123457777',
   },
+  {
+    title: 'Book 3',
+    author: 'Author 1',
+    subject: 'Subject 3',
+    publishDate: '2021-03-01',
+    ISBN: '123457777',
+  },
+  {
+    title: 'Book 3',
+    author: 'Author 1',
+    subject: 'Subject 3',
+    publishDate: '2021-03-01',
+    ISBN: '123457777',
+  },
+  {
+    title: 'Book 3',
+    author: 'Author 1',
+    subject: 'Subject 3',
+    publishDate: '2021-03-01',
+    ISBN: '123457777',
+  },
+  {
+    title: 'Book 3',
+    author: 'Author 1',
+    subject: 'Subject 3',
+    publishDate: '2021-03-01',
+    ISBN: '123457777',
+  },
+  {
+    title: 'Book 3',
+    author: 'Author 1',
+    subject: 'Subject 3',
+    publishDate: '2021-03-01',
+    ISBN: '123457777',
+  },
 ];
 
 const booksPerPage = 10;
 let currentPage = 1;
+var ReqTitle = '';
+var ReqAuthor = '';
+
+function Request() {
+  const Title = document.getElementById('reqTitle');
+  const Author = document.getElementById('reqAuthor');
+  ReqTitle = Title.value;
+  ReqAuthor = Author.value;
+  const reqBody = document.getElementById('req');
+  const data = document.createElement('div');
+  let included = false;
+  /*books.forEach((book) => {
+    if (books[book].title === ReqTitle && books[book].author === ReqAuthor) {
+      included = true;
+    }
+  });*/
+  for (var i = 0; i < books.length; i++) {
+    if (books[i].title === ReqTitle && books[i].author === ReqAuthor) {
+      included = true;
+      break;
+    }
+  }
+  if (ReqAuthor != '' && ReqTitle != '' && included) {
+    data.innerHTML = `<p><h2>The title of the book is ${ReqTitle}</h2> </p>
+  <br />
+  <p >The Author of the book is '${ReqAuthor}'</p>
+  <br />
+  <h3>The book that you have requested is on the way</h3>`;
+    reqBody.appendChild(data);
+    Title.value = '';
+    Author.value = '';
+  } else {
+    alert('Enter valid Title and Author');
+  }
+  /*document.writeln(
+    `<div style='margin-top: 50px'><h2>The book That you have requested is:</h2><br><h3>${Title}</h3>
+    <br><h4>The author of the book is ${Author}</h4></div>`
+    ' The title of the Book is ' + Title
+  );
+  document.writeln('The Author of the book is' + Author);
+  document.writeln('The requested book is on the way');*/
+}
+
+const tableBody = document.getElementById('book-table-body');
+tableBody.innerHTML = '';
 
 function showBook(books) {
   //This function is used for rendering the books by creating row elements
-  const tableBody = document.getElementById('book-table-body');
-  tableBody.innerHTML = '';
 
-  const startIndex = (currentPage - 1) * booksPerPage;
-  const endIndex = startIndex + booksPerPage;
-  const disBooks = books.slice(startIndex, endIndex);
-
+  let startIndex = (currentPage - 1) * booksPerPage;
+  let endIndex = startIndex + booksPerPage;
+  let disBooks = books.slice(startIndex, endIndex);
+  if (disBooks.length == 0) {
+    return;
+  }
+  console.log(disBooks);
   disBooks.forEach((book) => {
     const row = document.createElement('tr');
     row.innerHTML = `
@@ -111,9 +192,29 @@ function showBook(books) {
     tableBody.appendChild(row);
   });
 
-  showPagination(); //Pagination function call
+  //showPagination(); //Pagination function call
   renderCriteriaCounts(books); //Counting function call
 }
+
+const load = document.getElementById('load');
+
+function hide() {
+  load.classList.remove('show');
+}
+
+window.addEventListener('scroll', () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+  if (scrollTop + clientHeight >= scrollHeight - 5) {
+    currentPage++;
+    load.classList.add('show');
+    setTimeout(function load() {
+      showBook(books);
+      console.log('kdijfn');
+      hide();
+    }, 2000);
+  }
+});
 
 function renderCriteriaCounts(books) {
   //This function is used for counting the number of books....

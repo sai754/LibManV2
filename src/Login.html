@@ -57,6 +57,15 @@
               placeholder="Enter your password"
             />
           </div>
+          <a href="Signup.html">Need to Create User ?</a>
+          <br />
+          <button
+            class="btn btn-danger"
+            id="Forgot"
+            style="margin-bottom: 10px"
+          >
+            Forgot Password ?
+          </button>
           <button type="button" id="login" name="login" class="btn btn-success">
             Login
           </button>
@@ -103,6 +112,10 @@
             console.log(errorMessage);
             alert(errorMessage);
           });
+      });
+
+      document.getElementById('Forgot').addEventListener('click', function () {
+        alert('OTP has been sent to your mail successfully');
       });
     </script>
   </body>
